@@ -1,0 +1,3 @@
+liket = SCAN(liket)
+common = [FROM liket l1, liket l2 where l1.id_webpage==l2.id_webpage and l1.id_person=%(P1)s and l2.id_person=%(P2)s EMIT l1.id_webpage as wid]
+pagename = [FROM common, webpage EMIT webpage.url where webpage.wid==common.wid]

@@ -1,0 +1,3 @@
+friend = SCAN(friend)
+NUM = [FROM friend where friend.f1==%(person)s or friend.f2==%(person)s EMIT COUNT(*)]
+STORE(NUM, gdbench:q12)
